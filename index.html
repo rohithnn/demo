@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     :root {
-      --primary: #c9976e;
-      --secondary: #8b8655e0;
+      --primary: #c9a96e;
+      --secondary: #8b7355;
       --accent: #f4e5d3;
       --dark: #2c2c2c;
       --light: #ffffff;
@@ -25,7 +25,6 @@
       --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
       --shadow-gold: 0 8px 32px rgba(212,175,55,0.3);
     }
-    
     * {
       margin: 0;
       padding: 0;
@@ -62,6 +61,23 @@
     @keyframes float {
       0% { transform: translateY(100vh) rotate(0deg); }
       100% { transform: translateY(-100px) rotate(360deg); }
+    }
+
+    /* NRVP Branding */
+    .nrvp-brand {
+      position: fixed;
+      top: 5px;
+      left: 100px;
+      z-index: 1001;
+      background: rgba(26,26,26,1);
+      backdrop-filter: blur(15px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      box-shadow: var(--shadow-gold);
+      transform: translateY(-100%);
+      animation: slideDown 1s ease forwards;
+      animation-delay: 1.5s;
+      border: 1px solid rgba(212,175,55,0.98);
     }
 
     .nrvp-brand .logo {
@@ -220,8 +236,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       background: rgba(0,0,0,0.5);
       z-index: 999;
       opacity: 0;
@@ -319,22 +335,6 @@
         transform: translateY(0);
       }
     }
-    .countdown {
-  font-size: 2rem;
-  margin: 20px 0;
-}
-button {
-  padding: 10px 20px;
-  background-color: #b29663;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #9f8456;
-}
 
     h2 {
       font-family: var(--font-header);
@@ -364,21 +364,52 @@ button:hover {
       font-weight: 300;
     }
 
-    /* Cards */
-    .card {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      padding: 1.5rem;
-      border-radius: 25px;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.4s ease;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
+  .card {
+    text-align: center;
+  }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
+  .family-title {
+    font-size: 2.5rem;
+    color: #a57f2d;
+    margin-bottom: 0.5rem;
+  }
+
+  .parents-title {
+    font-size: 2rem;
+    color: #a57f2d;
+    margin-bottom: 2rem;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    display: block;
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
 
     /* Gallery */
     .gallery {
@@ -465,18 +496,17 @@ button:hover {
       padding: 1.5rem;
       border-radius: 25px;
       box-shadow: var(--shadow-soft);
-      max-width: 500px;
+      max-width: 400px;
       text-align: center;
     }
 
     .upi-qr {
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
       border-radius: 20px;
       margin: 1.5rem auto;
       box-shadow: var(--shadow-soft);
       transition: all 0.3s ease;
-      
     }
 
     .upi-qr:hover {
@@ -763,6 +793,22 @@ button:hover {
         visibility: hidden;
       }
     }
+    .countdown {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+button {
+  padding: 10px 20px;
+  background-color: #b29663;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #9f8456;
+}
   </style>
 </head>
 <body>
@@ -842,21 +888,24 @@ button:hover {
         </div>
       </div>
     </div>
-    <div id="countdown" class="countdown"></div>
+     <div id="countdown" class="countdown"></div>
     <a href="https://calendar.app.google/qdjTht3V17CEfzH67" target="_blank">
       <button>Add to Google Calendar</button>
     </a>
   </section>
 
-  <section class="slide" id="story" data-aos="fade-up">
-    <div class="card">
-      <h2>Family tree </h2>
-      <h2>Krishnaappa and Nagrathamma<h2>
+ <section class="slide" id="story" data-aos="fade-up">
+  <div class="card">
+    <h2 class="family-title">Gireesh Family</h2>
+    <h3 class="parents-title">Krishnaappa and Nagrathamma</h3>
+    <div class="gallery">
       <div class="gallery-item">
-        <img src="gireeshfamily.jpg" width="800" height="600" alt="family photo">
-        <div class="gallery-overlay">Gireesh family</div>
+        <img src="gireeshfamily.jpg" alt="Engagement Photos">
+        <div class="gallery-overlay">Engagement Day</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="slide" id="proposal" data-aos="fade-up">
     <div class="card">
@@ -874,16 +923,16 @@ button:hover {
         <div class="gallery-overlay">Engagement Day</div>
       </div>
       <div class="gallery-item">
-        <img src="family.jpg" alt="family">
-        <div class="gallery-overlay">Special Moments</div>
-      </div>
-      <div class="gallery-item">
-        <img src="brothers.jpg" alt="Family Moments">
+        <img src="brothers.jpg" alt="brothers">
         <div class="gallery-overlay">Brothers</div>
       </div>
       <div class="gallery-item">
+        <img src="family.jpg" alt="Family Moments">
+        <div class="gallery-overlay">With Family</div>
+      </div>
+      <div class="gallery-item">
         <img src="rings.jpg" alt="Special Moments">
-        <div class="gallery-overlay">Rings</div>
+        <div class="gallery-overlay">Special Moments</div>
       </div>
     </div>
   </section>
@@ -901,9 +950,9 @@ button:hover {
     <h2>Join Us Virtually</h2>
     <div class="card">
       <p>Can't make it in person? No worries! Join us virtually on our special day.</p>
-      <p><strong>Date:</strong> June 15, 2024 at 2:00 PM EST</p>
+      <p><strong>Date:</strong> NOV 22, 2025 at 6:30 PM EST</p>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL" allowfullscreen></iframe>
+        <iframe src="preweddimg.mp4" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -911,10 +960,10 @@ button:hover {
   <section class="slide" id="location" data-aos="fade-up">
     <h2>Wedding Venue</h2>
     <div class="card">
-      <p><strong>Padmavathi Kalyana Mantapa</strong></p>
-      <p>Madanayakana Halli, Anchepalya, Bengaluru, Karnataka 562162</p>
+      <p><strong>The Grand Ballroom</strong></p>
+      <p>123 Wedding Lane, Dream City</p>
       <div class="video-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.599550845865!2d77.4624673!3d13.061142499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae234fa66762e1%3A0x4fc86187f55354a6!2sPadmavathi%20Kalyana%20Mantapa!5e0!3m2!1sen!2sin!4v1751038535563!5m2!1sen!2sin" width="600" height="450" style="border:0;"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.599550845865!2d77.4624673!3d13.061142499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae234fa66762e1%3A0x4fc86187f55354a6!2sPadmavathi%20Kalyana%20Mantapa!5e0!3m2!1sen!2sin!4v1751038535563!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -936,7 +985,7 @@ button:hover {
     <div class="upi-container">
       <p>Your presence is the greatest gift, but if you'd like to send your blessings:</p>
       <img class="upi-qr" src="WhatsApp Image 2025-06-29 at 16.13.39_43814a87.jpg" alt="UPI QR Code">
-      <div class="upi-id" id="upi-id">9740838531@ybl</div>
+       <div class="upi-id" id="upi-id">9740838531@ybl</div>
       <button class="btn btn-primary" onclick="copyUPI()">Copy UPI ID</button>
       <button class="btn btn-outline" onclick="sendGift()">Send Blessing</button>
     </div>
@@ -952,7 +1001,7 @@ button:hover {
       </div>
       <div class="contact-item">
         <div class="contact-icon">📱</div>
-        <span>+91 9740838531 </span>
+        <span>+91 9740838531@ybl</span>
       </div>
     </div>
   </section>
@@ -963,7 +1012,6 @@ button:hover {
       <div class="nrvp-logo">NRVP<sup style="color: #ff1744;">♥</sup>s</div>
       <div class="nrvp-subtitle">Innovating the Future of Tech</div>
       <p>At NRVP's, we build powerful, scalable solutions driven by innovation and technology. From AI to real-time systems — we shape the digital tomorrow.<br> Contact Us:<br>Email Id: NRVPtech@gmail.com<br>Ph No: 9113214677</p>
-    <P> </P>
     </div>
   </footer>
 
